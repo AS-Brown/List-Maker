@@ -16,7 +16,7 @@ const handleSubmit = function(event){
     createName(event);
     createDate(event);
     createTime(event);
-    if (typeof deleteAllTest === 'undefined') {
+    if (typeof deleteAllTest === 'undefined' || deleteAllTest === 0) {
             createDelete(event)
     }
     document.querySelector('#form-id').reset()
@@ -57,6 +57,7 @@ const handleDelete = function(event){
     for (result of processDelete){
         result.remove()
     }
+    deleteAllTest = 0
 }
 
 
