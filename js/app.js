@@ -3,9 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const formAppointment = document.querySelector('#form-id');
     formAppointment.addEventListener('submit', handleSubmit);
-
-    const deleteAllButton = document.querySelector('#delete');
-    deleteAllButton.addEventListener('click', handleDelete)
 });
 
 const list = document.querySelector('ul')
@@ -26,18 +23,21 @@ const createName = function(event){
     const newName = document.createElement('h1')
     newName.textContent = `${event.target.nameOfList.value}`
     newName.classList.add('name')
+    newName.classList.add('all-results')
     list.appendChild(newName)
 }
 const createDate = function(event){
     const newDate = document.createElement('h2')
     newDate.textContent = `${event.target.dateToGo.value}`
     newDate.classList.add('date')
+    newDate.classList.add('all-results')
     list.appendChild(newDate)
 }
 const createTime = function(event){
     const newTime = document.createElement('p')
     newTime.textContent = `${event.target.timeToGo.value}`
     newTime.classList.add('time')
+    newTime.classList.add('all-results')
     list.appendChild(newTime)
 }
 
@@ -50,14 +50,16 @@ const createDelete = function(){
         buttons.appendChild(deleteAll)
         deleteAllTest = 1
     }
-
-
+    const deleteAllButton = document.querySelector('.delete');
+    deleteAllButton.addEventListener('click', handleDelete)
 }
 
 const handleDelete = function(event){
     event.preventDefault();
-    const processDelete = document.querySelectorAll('name', 'date', 'time')
-    processDelete.remove()
+    const processDelete = document.querySelectorAll('.all-results')
+    for (result of processDelete){
+        result.innerHTML = ""
+    }
 }
 
 
