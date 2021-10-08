@@ -19,7 +19,6 @@ const handleSubmit = function(event){
 }
 
 const createName = function(event){
-    event.preventDefault();
     const newName = document.createElement('h1')
     newName.textContent = `${event.target.nameOfList.value}`
     newName.classList.add('name')
