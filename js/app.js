@@ -5,16 +5,20 @@ document.addEventListener('DOMContentLoaded', () => {
     formAppointment.addEventListener('submit', handleSubmit);
 });
 
-const list = document.querySelector('ul')
-const buttons = document.querySelector('.buttons')
-var deleteAllTest = 0
+const setUp = function(){
+    list = document.querySelector('ul')
+    buttons = document.querySelector('.buttons')
+}
 
 const handleSubmit = function(event){
+    setUp()
     event.preventDefault();
     createName(event);
     createDate(event);
     createTime(event);
-    createDelete(event);
+    if (typeof deleteAllTest === 'undefined') {
+            createDelete(event)
+    }
     document.querySelector('#form-id').reset()
 }
 
@@ -37,24 +41,21 @@ const createTime = function(event){
     list.appendChild(newTime)
 }
 
-const createDelete = function(){
-    if (deleteAllTest > 0){
-    } else {
+const createDelete = function(){   
         const deleteAll = document.createElement('button')
         deleteAll.innerHTML = 'Delete All'
         deleteAll.classList.add('delete')
         buttons.appendChild(deleteAll)
         deleteAllTest = 1
-    }
     const deleteAllButton = document.querySelector('.delete');
     deleteAllButton.addEventListener('click', handleDelete)
 }
 
 const handleDelete = function(event){
     event.preventDefault();
-    const processDelete = document.querySelectorAll('.name, .date, .time')
+    const processDelete = document.querySelectorAll('.name, .date, .time, .delete')
     for (result of processDelete){
-        result.innerHTML = ""
+        result.remove()
     }
 }
 
