@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <title>Appointment Maker</title>
+</head>
+<body>
+    <form id="form-id">
+        <div id=form-holder>
+            <div class="form-box">
+                <label for="nameOfList" class="option">What is the appointment? </label>
+                <input type="text" id="nameOfList" required/>
+            </div>
+
+            <div class="form-box">
+                <label for="dateToGo" class="option">What day is the appointment? </label>
+                <input type="date" id="dateToGo" required/>
+            </div>
+            
+            <div class="form-box">
+                <label for="timeToGo" class="option">What time is the appointment? </label>
+                <input type="time" id="timeToGo" required/>
+            </div>
+        </div>
+
+            <input type="submit" value="Save Appointment"/>
+    </form>
+    <div class='buttons'></div>
+    <h1>Appointment List</h1>
+    <ul id="appointment-list"></ul>
+</body>
+<script src="js/app.js"></script>
+</html>
