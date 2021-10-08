@@ -23,21 +23,18 @@ const createName = function(event){
     const newName = document.createElement('h1')
     newName.textContent = `${event.target.nameOfList.value}`
     newName.classList.add('name')
-    newName.classList.add('all-results')
     list.appendChild(newName)
 }
 const createDate = function(event){
     const newDate = document.createElement('h2')
     newDate.textContent = `${event.target.dateToGo.value}`
     newDate.classList.add('date')
-    newDate.classList.add('all-results')
     list.appendChild(newDate)
 }
 const createTime = function(event){
     const newTime = document.createElement('p')
     newTime.textContent = `${event.target.timeToGo.value}`
     newTime.classList.add('time')
-    newTime.classList.add('all-results')
     list.appendChild(newTime)
 }
 
@@ -56,7 +53,7 @@ const createDelete = function(){
 
 const handleDelete = function(event){
     event.preventDefault();
-    const processDelete = document.querySelectorAll('.all-results')
+    const processDelete = document.querySelectorAll('.name, .date, .time')
     for (result of processDelete){
         result.innerHTML = ""
     }
