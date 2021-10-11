@@ -1,0 +1,36 @@
+body{
+    background-color: cornflowerblue;
+    font-family: Helvetica, sans-serif;
+}
+
+#form-id{
+    margin: auto;
+    width: 20vw;
+    background-color: lightgrey;
+    padding: 1vw;
+    border-radius: 1vw;
+}
+
+#button-holder{
+    display: flex;
+    width: 20vw;
+    padding: 1vw;
+}
+
+#list-title{
+    padding:2vw;
+    margin:auto;
+    width:20vw;
+}
+
+ul .all-submit{
+    max-width: fit-content;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    background-color: lightgrey;
+    padding: 10px;
+    margin:10px;
+    margin-left:40vw
+}

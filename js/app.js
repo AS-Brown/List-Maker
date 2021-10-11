@@ -16,6 +16,7 @@ const handleSubmit = function(event){
     createName(event);
     createDate(event);
     createTime(event);
+    createLetter(event);
     if (typeof deleteAllTest === 'undefined' || deleteAllTest === 0) {
             createDelete(event)
     }
@@ -26,19 +27,30 @@ const createName = function(event){
     const newName = document.createElement('h1')
     newName.textContent = `${event.target.nameOfList.value}`
     newName.classList.add('name')
+    newName.classList.add('all-submit')
     list.appendChild(newName)
 }
 const createDate = function(event){
     const newDate = document.createElement('h2')
     newDate.textContent = `${event.target.dateToGo.value}`
     newDate.classList.add('date')
+    newDate.classList.add('all-submit')
     list.appendChild(newDate)
 }
 const createTime = function(event){
     const newTime = document.createElement('p')
     newTime.textContent = `${event.target.timeToGo.value}`
     newTime.classList.add('time')
+    newTime.classList.add('all-submit')
     list.appendChild(newTime)
+}
+
+const createLetter = function(event){
+    const newLetter = document.createElement('p')
+    newLetter.textContent = `${event.target.letter_choice.value}`
+    newLetter.classList.add('letter-result')
+    newLetter.classList.add('all-submit')
+    list.appendChild(newLetter)
 }
 
 const createDelete = function(){   
@@ -53,7 +65,7 @@ const createDelete = function(){
 
 const handleDelete = function(event){
     event.preventDefault();
-    const processDelete = document.querySelectorAll('.name, .date, .time, .delete')
+    const processDelete = document.querySelectorAll('.name, .date, .time, .delete, .letter-result')
     for (result of processDelete){
         result.remove()
     }
